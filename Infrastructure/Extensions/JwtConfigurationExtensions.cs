@@ -12,7 +12,11 @@ public static class JwtConfigurationExtensions
     public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IConfiguration configuration)
     {
         var jwtSettings = configuration.GetSection("JwtSettings").Get<JwtSettings>();
-
+        
+        if (jwtSettings == null || string.IsNullOrEmpty(jwtSettings.SecretKey))
+        {
+            throw new ArgumentNullException("JwtSettings", "JWT SecretKey cannot be null or empty.");
+        }
         services.AddSingleton(jwtSettings);
 
         services.AddAuthentication(options =>
