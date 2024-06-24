@@ -4,7 +4,7 @@ namespace Domain.Interfaces.Services;
 
 public interface IVenueService
 {
-    Task<Venue> CreateVenueAsync(Venue venue);
+    Task CreateVenueAsync(Venue venue);
     Task<Venue> GetVenueByIdAsync(int id);
     Task<IEnumerable<Venue>> GetAllVenuesAsync();
     Task UpdateVenueAsync(Venue venue);
