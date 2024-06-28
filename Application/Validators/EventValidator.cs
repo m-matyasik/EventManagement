@@ -13,6 +13,6 @@ public class EventValidator : AbstractValidator<EventDto>
         
         RuleFor(r => r.Date)!.NotEmpty()!.WithMessage("Date is required.");
         RuleFor(r => r.Date)!.GreaterThan(DateTime.Now).WithMessage("Date must be later than today.");
-        RuleFor(r => r.Organizer)!.NotEmpty()!.WithMessage("Organizer is required.");
+        RuleFor(r => r.OrganizerId)!.NotEmpty()!.WithMessage("Organizer is required.");
     }
 }

@@ -56,7 +56,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services
     .AddJwtAuthentication(builder.Configuration)
     .AddApplication()
-    .AddInfrastructure();
+    .AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
