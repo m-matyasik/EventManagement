@@ -9,6 +9,7 @@ public class EventRepositoryTests
     private readonly Mock<IEventRepository> _mockRepo;
     private readonly EventService _eventService;
 
+    //
     public EventRepositoryTests()
     {
         _mockRepo = new Mock<IEventRepository>();
